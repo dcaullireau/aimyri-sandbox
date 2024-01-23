@@ -69,11 +69,6 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CCF3A398CB234CBD86648BDF9077F44D }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6F3CB07A33874ACBBAD7579821955281 }}
 
-      - name: 'Login to Azure Container Registry'
-        uses: azure/docker-login@v1
-        with:
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
