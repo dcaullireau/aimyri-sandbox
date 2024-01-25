@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'live-ia-semantic-webapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_980B8D5F32B4411A949DD670643A22F9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EBCE2B230FCF4D37A0A60C78611763D7 }}
