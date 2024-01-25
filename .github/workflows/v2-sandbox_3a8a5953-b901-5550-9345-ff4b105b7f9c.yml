@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://sandboxcontainerregistries.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_60e101a6d9c54daf8ebe35ad4154873c }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_1e3956b25ad14e0b8e9c0cd5c3e8965e }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_c1ea0bbf4e264f31a8a9405fac42abdf }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_8d30be206f724ef59ef989a1416a418e }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: sandboxcontainerregistries.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_60e101a6d9c54daf8ebe35ad4154873c }}/aimyri-sandbox:${{ github.sha }}
+        tags: sandboxcontainerregistries.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c1ea0bbf4e264f31a8a9405fac42abdf }}/sandboxcontainerregistries.azurecr.io/aimyri-sandbox:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: '3a8a5953-b901-5550-9345-ff4b105b7f9c'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5644ef2f4f7744c9a45c37ec66234066 }}
-        images: 'sandboxcontainerregistries.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_60e101a6d9c54daf8ebe35ad4154873c }}/aimyri-sandbox:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_438b31187da148e7837578204e8aedc4 }}
+        images: 'sandboxcontainerregistries.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c1ea0bbf4e264f31a8a9405fac42abdf }}/sandboxcontainerregistries.azurecr.io/aimyri-sandbox:${{ github.sha }}'
